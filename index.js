@@ -21,7 +21,7 @@ app.use(express.urlencoded())
 const server = https.createServer(app)
 const io = new Server(server,{
     cors:{
-        origin:"https://thunderous-bombolone-3f2d11.netlify.app/"
+        origin:"*"
     }
 })
 
