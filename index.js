@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const connectDB = require("./db");
-const http = require("http")
+const https = require("https")
 const cors = require("cors")
 const { Server } = require("socket.io")
 const { requireAuth, ClerkExpressWithAuth } = require('@clerk/clerk-sdk-node');
@@ -18,7 +18,7 @@ app.use(cors({
 }))
 app.use(express.urlencoded())
 
-const server = http.createServer(app)
+const server = https.createServer(app)
 const io = new Server(server,{
     cors:{
         origin:"https://thunderous-bombolone-3f2d11.netlify.app/"
@@ -42,7 +42,7 @@ io.on('connection', (socket) => {
 
 connectDB()
     .then(() => {
-        server.listen(PORT, () => console.log(`Server running on port http://localhost:${PORT}`));
+        server.listen(PORT, () => console.log(`Server running on port https://localhost:${PORT}`));
         console.log("connection successfull")
         server.on("error", (error) => {
             console.log("error : ", error);
