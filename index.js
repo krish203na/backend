@@ -56,7 +56,7 @@ connectDB()
 const userrouter = require("./router/user.router.js")
 const taskrouter = require("./router/task.router.js")
 
-
+app.get("/",(req,res)=>{res.send("Hello server is running")})
 // routes declaration
 app.use("/user", userrouter)
 app.use("/task", taskrouter)
