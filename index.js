@@ -14,14 +14,14 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors({
-    origin: process.env.CORS_ORIGIN
+    origin: "https://thunderous-bombolone-3f2d11.netlify.app"
 }))
 app.use(express.urlencoded())
 
 const server = http.createServer(app)
 const io = new Server(server,{
     cors:{
-        origin:"*"
+        origin:"https://thunderous-bombolone-3f2d11.netlify.app/"
     }
 })
 
