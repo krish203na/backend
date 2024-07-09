@@ -3,14 +3,14 @@ const Task = require("../../Models/task.model");
 
 const getTaskbyfield = asyncHandler(async (req, res) => {
     try {
-        const query = req.params.id.trim(); // Trim any whitespace
+        const query = req.params.id.trim(); 
         const task = await Task.find({
             $or: [
-                { taskname: { $regex: query, $options: 'i' } },       // Case-insensitive regex search
-                { taskdescription: { $regex: query, $options: 'i' } },// Case-insensitive regex search
-                { taskpriority: { $regex: query, $options: 'i' } },   // Case-insensitive regex search
-                { taskstatus: { $regex: query, $options: 'i' } },     // Case-insensitive regex search
-                { taskend: { $regex: query, $options: 'i' } },        // Case-insensitive regex search
+                { taskname: { $regex: query, $options: 'i' } },       
+                { taskdescription: { $regex: query, $options: 'i' } },
+                { taskpriority: { $regex: query, $options: 'i' } },   
+                { taskstatus: { $regex: query, $options: 'i' } },     
+                { taskend: { $regex: query, $options: 'i' } },        
             ]
         });
 
