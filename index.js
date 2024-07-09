@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors({
-    origin: "https://thunderous-bombolone-3f2d11.netlify.app"
+    origin: "*"
 }))
 app.use(express.urlencoded())
 
